@@ -90,7 +90,7 @@ struct stlinky*  stlinky_detect(stlink_t* sl)
     struct stlinky* st = malloc(sizeof(struct stlinky));
     int multiple=0;
     st->sl = sl;
-    printf("sram: 0x%x bytes @ 0x%zx\n", sl->sram_base, sl->sram_size);
+    printf("sram: 0x%x bytes @ 0x%zx\n", sl->sram_size, sl->sram_base);
     uint32_t off;
     for (off = 0; off < sl->sram_size; off += 4) {
         if (off % 1024 == 0) sig_process();
